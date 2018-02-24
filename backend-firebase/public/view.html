@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIREBASE view</title>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="landing.css">
+3
+</head>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+    
+    // Initialize Firebase
+    
+    ( function() {
+        // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyC19CtgLUhHbEjGDRj970eeHYeVyQ38_Bs",
+                authDomain: "express-7190e.firebaseapp.com",
+                databaseURL: "https://express-7190e.firebaseio.com",
+                projectId: "express-7190e",
+                storageBucket: "express-7190e.appspot.com",
+                messagingSenderId: "1034098370699"
+            };
+            firebase.initializeApp(config);
+        
+            //get element
+            //const preObject = document.getElementById('object');
+        
+            //create reference
+            //const dbRefObject = firebase.database().ref();
+        
+            //sync the object changes
+            //dbRefObject.on('value', snap=> {
+                //var a=snap.val();
+                //var a = JSON.stringify(snap.val(),null,3);
+                //a=[];
+                var storage = firebase.storage();
+                //var pathReference = storage.ref('filesupload/');
+                //console.log(pathReference);
+                var scoresRef = firebase.database().ref("useremail/");
+                scoresRef.on('value', function(data) {
+                        //a.push(data.val());
+                        data.forEach(element => {
+                            //console.log(element.val());
+                            var para = document.createElement("P");
+                            var t = document.createTextNode(element.val());
+                            para.appendChild(t);
+                            document.getElementById("object").appendChild(para);
+                        
+                            console.log(data.val());
+                        firebase.storage().ref().child('hello/'+firebase.auth().currentUser.email+'/'+element.val()).getDownloadURL().then(function(url) {
+                            // `url` is the download URL for 'images/stars.jpg'
+                            // This can be downloaded directly:
+                            // var xhr = new XMLHttpRequest();
+                            // xhr.responseType = 'blob';
+                            // xhr.onload = function(event) {
+                            //   var blob = xhr.response;
+                            // };
+                            // xhr.open('GET', url);
+                            // xhr.send();
+                            console.log(url);
+                            // Or inserted into an <img> element:
+                            // var img = document.getElementById('myimg');
+                            // img.src = url;
+                            }).catch(function(error) {
+                            // Handle any errors
+                            })
+                        });
+                        //para.appendChild(t);
+                        //document.getElementById("object").appendChild(para);
+                   // });
+               // });)
+                        });
+    
+                    })();
+
+
+</script>
+<body>
+<section class="hero is-info is-fullheight">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="email.html">
+                        <h3>back</h3>
+                    </a>
+                    <button  class="mdl-button mdl-js-button mdl-button--raised" id="signout" name="signout">Sign Out</button>
+                </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-6 is-offset-3">
+                <h1 class="title">
+                    working
+                </h1>
+                <h2 class="subtitle">
+                    undercontruction
+                    plz check view link in console
+
+                </h2>
+                <p id="object"></p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script async type="text/javascript" src=""></script>
+<!-- <script src="view.js"></script> -->
+<!-- <script src="user.js"></script> -->
+</body>
+</html>

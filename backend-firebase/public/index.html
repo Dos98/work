@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email/Password Authentication Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+
+
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC19CtgLUhHbEjGDRj970eeHYeVyQ38_Bs",
+            authDomain: "express-7190e.firebaseapp.com",
+            databaseURL: "https://express-7190e.firebaseio.com",
+            projectId: "express-7190e",
+            storageBucket: "express-7190e.appspot.com",
+            messagingSenderId: "1034098370699"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- Import and configure the Firebase SDK -->
+    <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+    <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+    <script src="/__/firebase/4.6.2/firebase-app.js"></script>
+    <script src="/__/firebase/4.6.2/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
+</head>
+<body>
+
+    <!--my login code-->
+    <div class="columns is-centered">
+        <div class="column is-5">
+            <div class="box">
+                <br>
+                use email: gmail@gmail.com
+                and pass: 123456
+                <br>
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" id="email" type="email" placeholder="Email">
+                        <span class="icon is-small is-left">
+              <i class="fa fa-envelope"></i>
+            </span>
+                        <span class="icon is-small is-right">
+              <i class="fa fa-check"></i>
+            </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" id="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+              <i class="fa fa-lock"></i>
+            </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button id="quickstart-sign-in" name="signin" class="button is-success">
+                            Login
+                        </button>
+                        <button id="logout" class="button is-info" disabled>
+                            logout
+                        </button>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button id="signup" class="button is-info hidden" id="quickstart-sign-up" name="signup" >
+                            SignUp
+                        </button>
+                    </p>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+                <div class="quickstart-user-details-container">
+                    Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                    <div>Firebase auth <code>currentUser</code> object value:</div>
+                    <pre><code id="quickstart-account-details">null</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>

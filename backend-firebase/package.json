@@ -1,0 +1,19 @@
+{
+  "name": "node",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.6.1",
+    "express": "~4.15.5",
+    "firebase": "^4.6.2",
+    "firebaseui": "^2.5.1"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": ""
+}

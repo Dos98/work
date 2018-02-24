@@ -1,0 +1,91 @@
+[debug] [2017-12-16T18:14:33.043Z] ----------------------------------------------------------------------
+[debug] [2017-12-16T18:14:33.046Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-12-16T18:14:33.046Z] CLI Version:   3.16.0
+[debug] [2017-12-16T18:14:33.046Z] Platform:      win32
+[debug] [2017-12-16T18:14:33.046Z] Node Version:  v8.4.0
+[debug] [2017-12-16T18:14:33.047Z] Time:          Sat Dec 16 2017 23:44:33 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:33.047Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-16T18:14:33.061Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-16T18:14:33.062Z] > authorizing via signed-in user
+[debug] [2017-12-16T18:14:33.064Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-16T18:14:33.065Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/RT7vlpgmrQfyFM14vBJVHiym5vcZMEbfdeS1zytIzjc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Dec 16 2017 23:44:33 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:33.614Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-16T18:14:33.670Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/express-7190e  
+  
+ Sat Dec 16 2017 23:44:33 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:35.365Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-16T18:14:35.367Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/express-7190e/tokens  
+  
+ Sat Dec 16 2017 23:44:35 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:36.592Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'express-7190e'...
+[info] 
+[info] i  deploying database, storage, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-12-16T18:14:38.455Z] >>> HTTP REQUEST PUT https://express-7190e.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+} 
+ Sat Dec 16 2017 23:44:38 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:40.012Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database express-7190e is valid
+[debug] [2017-12-16T18:14:40.091Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/express-7190e  
+  
+ Sat Dec 16 2017 23:44:40 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:42.279Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2017-12-16T18:14:42.282Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/express-7190e:test  
+ { source: { files: [ [Object] ] } } 
+ Sat Dec 16 2017 23:44:42 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:44.203Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[debug] [2017-12-16T18:14:44.211Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.4.2",
+    "firebase-functions": "^0.7.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2017-12-16T18:14:44.213Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/express-7190e?view=CONSUMER_VIEW  
+  
+ Sat Dec 16 2017 23:44:44 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:44.214Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/express-7190e?view=CONSUMER_VIEW  
+  
+ Sat Dec 16 2017 23:44:44 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:46.460Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-16T18:14:47.492Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2017-12-16T18:14:47.496Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/express-7190e  
+  
+ Sat Dec 16 2017 23:44:47 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:47.498Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/express-7190e/apiKeys  
+  
+ Sat Dec 16 2017 23:44:47 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:49.319Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-16T18:14:49.451Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2017-12-16T18:14:49.464Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/express-7190e/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Sat Dec 16 2017 23:44:49 GMT+0530 (India Standard Time)
+[debug] [2017-12-16T18:14:51.245Z] <<< HTTP RESPONSE 200
